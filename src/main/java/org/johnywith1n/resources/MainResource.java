@@ -62,19 +62,6 @@ public class MainResource
 		        HttpSessionUtil.getFacebookProfileName(session));
 	}
 
-	public String facebookLogin(HttpSession session)
-	        throws UnsupportedEncodingException
-	{
-		String facebook_state = Integer.toString((new Random()).nextInt());
-		String dialogUrl = "https://www.facebook.com/dialog/oauth?client_id="
-		        + appId + "&redirect_uri="
-		        + URLEncoder.encode(redirect_URL, "UTF-8") + "&state="
-		        + facebook_state + "&scope=read_stream";
-
-		HttpSessionUtil.setCsrfState(session, facebook_state);
-		return "<script> top.location.href='" + dialogUrl + "'</script>";
-	}
-
 	@Path("login")
 	@Produces(MediaType.TEXT_HTML)
 	@GET
@@ -146,6 +133,19 @@ public class MainResource
 	{
 		return Response.status(401).entity(error).type(MediaType.TEXT_HTML)
 		        .build();
+	}
+
+	public String facebookLogin(HttpSession session)
+	        throws UnsupportedEncodingException
+	{
+		String facebook_state = Integer.toString((new Random()).nextInt());
+		String dialogUrl = "https://www.facebook.com/dialog/oauth?client_id="
+		        + appId + "&redirect_uri="
+		        + URLEncoder.encode(redirect_URL, "UTF-8") + "&state="
+		        + facebook_state + "&scope=read_stream";
+
+		HttpSessionUtil.setCsrfState(session, facebook_state);
+		return "<script> top.location.href='" + dialogUrl + "'</script>";
 	}
 
 	private String getAccessToken(String code) throws IOException
