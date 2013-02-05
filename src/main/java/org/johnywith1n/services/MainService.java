@@ -27,6 +27,8 @@ public class MainService extends Service<MainServiceConfiguration>
 		bootstrap.setName("facebook-links");
 		bootstrap.addBundle(new ViewBundle());
 		bootstrap.addBundle(new AssetsBundle("/assets", "/"));
+		bootstrap.addBundle(new AssetsBundle("/META-INF/resources/webjars",
+		        "/webjars"));
 	}
 
 	@Override

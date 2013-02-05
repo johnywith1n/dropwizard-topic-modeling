@@ -54,6 +54,11 @@
       <id>boilerpipe</id>
       <url>http://boilerpipe.googlecode.com/svn/repo/</url>
     </repository>
+    <repository>
+      <id>oracleReleases</id>
+      <name>Oracle Released Java Packages</name>
+      <url>http://download.oracle.com/maven</url>
+    </repository>
   </repositories>
 </project>
 

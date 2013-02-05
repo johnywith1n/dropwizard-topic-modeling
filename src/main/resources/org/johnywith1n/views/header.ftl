@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   
     <!-- Le styles -->  
-    <link href="/bootstrap-master/docs/assets/css/bootstrap.css" rel="stylesheet">  
-    <link href="/bootstrap-master/docs/assets/css/example-fluid-layout.css" rel="stylesheet">  
+  	<link rel='stylesheet' href='/webjars/bootstrap/2.2.2/css/bootstrap.min.css'>
+  	<link rel='stylesheet' href='/css/main.css'>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->  
     <!--[if lt IE 9]>  
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>  
