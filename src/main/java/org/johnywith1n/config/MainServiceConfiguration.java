@@ -24,6 +24,10 @@ public class MainServiceConfiguration extends Configuration
 	@JsonProperty
 	private HttpClientConfiguration httpClient = new HttpClientConfiguration();
 
+	@NotEmpty
+	@JsonProperty
+	private String datadir;
+
 	public String getAppId()
 	{
 		return appId;
@@ -38,4 +42,10 @@ public class MainServiceConfiguration extends Configuration
 	{
 		return httpClient;
 	}
+
+	public String getDatadir()
+	{
+		return datadir;
+	}
+
 }

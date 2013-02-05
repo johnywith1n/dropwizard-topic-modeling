@@ -36,7 +36,7 @@ public class TestUtil
 		        .getLinks(
 		                client,
 		                "https://graph.facebook.com/me/links?access_token=AAAGx1ABEA6EBAHQZAnfx19TL2ZCQ1DBj5fUTo37nRZCUDzT9rAZAGgQ7gDb8GY8ArPIZAwPfaT9wLdYZBo1O2njVjhAQvMzqLE75ySeDUsZAwZDZD",
-		                500);
+		                50);
 		long t1 = System.currentTimeMillis();
 		LOGGER.info("Getting articles");
 		Map<String, String> articleMap = LinkContentExtractor.extractArticles(

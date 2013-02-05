@@ -41,12 +41,15 @@ public class MainService extends Service<MainServiceConfiguration>
 		        configuration.getHttpClientConfiguration()).build();
 		final HttpClient healthCheckHttpClient = new HttpClientBuilder().using(
 		        configuration.getHttpClientConfiguration()).build();
+		final ElasticSearchManager esManager = new ElasticSearchManager(
+		        configuration.getDatadir());
 
 		environment.setSessionHandler(new SessionHandler());
 		environment.addResource(new MainResource(appId, appSecret, httpClient));
 		environment.addResource(new FacebookLinksResource(httpClient));
 		environment.addHealthCheck(new FacebookAppHealthCheck(appId,
 		        healthCheckHttpClient));
+		environment.manage(esManager);
 	}
 
 }

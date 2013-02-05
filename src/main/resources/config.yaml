@@ -1,4 +1,6 @@
 appId: 
 appSecret:
+datadir:
 http:
   rootPath: /service/*
+

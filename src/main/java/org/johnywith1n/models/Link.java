@@ -6,6 +6,7 @@ public class Link
 {
 	private String id;
 	private String link;
+	private String text;
 
 	public String getId()
 	{
@@ -25,6 +26,16 @@ public class Link
 	public void setLink(String link)
 	{
 		this.link = link;
+	}
+
+	public String getText()
+	{
+		return text;
+	}
+
+	public void setText(String text)
+	{
+		this.text = text;
 	}
 
 	@JsonAnySetter
